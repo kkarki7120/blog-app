@@ -1,19 +1,18 @@
 from django.shortcuts import render, HttpResponse
-
+from core.models import Blog
 
 def home(request):
     return render(request, 'base.html')
 
 def blog(request):
-    return render(request, 'blog.html')
+    blogs = Blog.objects.all() 
+    context = {'blogs': blogs }
+    return render(request, 'blog.html', context)
     
 def blogpost(request, slug):
-    slug = slug
-    print(slug)
-    context = {
-        'slug' : slug
-    }
-    return render(request, 'blogpost.html', context)
+    
+    return HttpResponse(request, "this is {{slug}}" )
+    
 
 def contact(request):
    return render(request, 'contact.html')
