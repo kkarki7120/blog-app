@@ -2,5 +2,15 @@
 
 
 {% block body %}
-blogpost slug
-  {% endblock %}
+
+<div class='container'>
+
+  <h1 class="my-3"> {{blog.title}} </h1>
+  <div class="row">
+
+  {{blog.content|safe}}{% comment "safe helps to render html templates through django" %}{% endcomment %}
+
+  </div>
+</div>
+
+{% endblock body %}

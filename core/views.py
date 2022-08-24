@@ -1,17 +1,20 @@
-from django.shortcuts import render, HttpResponse
+from django.http import HttpResponse
+from django.shortcuts import render
 from core.models import Blog
 
 def home(request):
     return render(request, 'base.html')
 
 def blog(request):
-    blogs = Blog.objects.all() 
+    blogs = Blog.objects.all() # This functions fetc all data stored in Blog 
     context = {'blogs': blogs }
     return render(request, 'blog.html', context)
     
 def blogpost(request, slug):
-    
-    return HttpResponse(request, "this is {{slug}}" )
+    blog = Blog.objects.filter(slug=slug).first() # filter function helps to grab particular object from database
+    print(blog)
+    context = { 'blog': blog }                                              # first  function helps to fetch first elements 
+    return render(request, 'blogpost.html', context)
     
 
 def contact(request):
