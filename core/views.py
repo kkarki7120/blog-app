@@ -3,7 +3,7 @@ from django.shortcuts import render
 from core.models import Blog
 
 def home(request):
-    return render(request, 'base.html')
+    return render(request, 'index.html')
 
 def blog(request):
     blogs = Blog.objects.all() # This functions fetc all data stored in Blog 

@@ -10,7 +10,7 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-lg bg-primary">
+    <nav class="navbar navbar-expand-lg bg-primary ">
       <div class="container-fluid">
         <a class="navbar-brand text-white" href="/">Blog-app</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,15 +19,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
+              <a class="nav-link  {% block homeactive %}{% endblock homeactive %}" aria-current="page" href="/">Home</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active text-white" aria-current="page" href="/blog">Blog</a>
+              <a class="nav-link   {% block blogactive %}{% endblock blogactive %}" aria-current="page" href="/blog">Blog</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active text-white" aria-current="page" href="/contact">Contatct</a>
+              <a class="nav-link  {% block contactactive %}{% endblock contactactive %}" aria-current="page" href="/contact">Contact</a>
             </li>
             
           </ul>
@@ -41,6 +41,11 @@
    
   {% block body %}
   {% endblock %}
+    <footer class="text-center py-3 bg-primary">2022&copy;Blogapp</footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-  </body>
+
+  
+  
+</body>
 </html>
